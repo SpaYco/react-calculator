@@ -7,20 +7,19 @@
 ## Built With
 
 - HTML
-- SASS
+- CSS
 - JavaScript
-- WebPack
-- Babel
+- React
 
 ## Live Demo
 
-[Live Demo Link](#soon)
+[Live Demo Link](https://spayco-react-calculator.herokuapp.com/)
 
 
 ## Getting Started
 
-- npm install
-- open index.html from the dist folder
+- `npm install`
+- `npm start`
 
 
 ## Making Changes
