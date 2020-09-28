@@ -22,8 +22,7 @@ let btnWide;
 // eslint-disable-next-line  react/prefer-stateless-function
 class ButtonPanel extends React.Component {
   render() {
-    const { color } = this.props;
-    const { wide } = this.props;
+    const { color, wide } = this.props;
 
     if (wide === true) {
       btnWide = '50%';
