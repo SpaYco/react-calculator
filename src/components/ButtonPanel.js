@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Button from './Button';
 
 const styles = {
   display: 'flex',
@@ -12,108 +12,63 @@ const rowStyles = {
   display: 'flex',
 };
 
-const btnStyles = {
-  width: '25%',
-  backgroundColor: '',
-};
-
-let btnWide;
-
 // eslint-disable-next-line  react/prefer-stateless-function
 class ButtonPanel extends React.Component {
   render() {
-    const { color, wide } = this.props;
-
-    if (wide === true) {
-      btnWide = '50%';
-    } else {
-      btnWide = '25%';
-    }
-
-    btnStyles.backgroundColor = color;
     return (
       <div style={styles}>
         <div style={rowStyles}>
-          <button type="submit" style={btnStyles}>
-            AC
-          </button>
-          <button type="submit" style={btnStyles}>
-            +/-
-          </button>
-          <button type="submit" style={btnStyles}>
-            %
-          </button>
-          <button type="submit" style={btnStyles}>
-            ÷
-          </button>
+          <Button name="AC" />
+
+          <Button name="+/-" />
+
+          <Button name="%" />
+
+          <Button name="÷" />
+
         </div>
         <div style={rowStyles}>
-          <button type="submit" style={btnStyles}>
-            7
-          </button>
-          <button type="submit" style={btnStyles}>
-            8
-          </button>
-          <button type="submit" style={btnStyles}>
-            9
-          </button>
-          <button type="submit" style={btnStyles}>
-            X
-          </button>
+          <Button name="7" />
+
+          <Button name="8" />
+
+          <Button name="9" />
+
+          <Button name="X" />
+
         </div>
         <div style={rowStyles}>
-          <button type="submit" style={btnStyles}>
-            4
-          </button>
-          <button type="submit" style={btnStyles}>
-            5
-          </button>
-          <button type="submit" style={btnStyles}>
-            6
-          </button>
-          <button type="submit" style={btnStyles}>
-            -
-          </button>
+          <Button name="4" />
+
+          <Button name="5" />
+
+          <Button name="6" />
+
+          <Button name="-" />
+
         </div>
         <div style={rowStyles}>
-          <button type="submit" style={btnStyles}>
-            1
-          </button>
-          <button type="submit" style={btnStyles}>
-            2
-          </button>
-          <button type="submit" style={btnStyles}>
-            3
-          </button>
-          <button type="submit" style={btnStyles}>
-            +
-          </button>
+          <Button name="1" />
+
+          <Button name="2" />
+
+          <Button name="3" />
+
+          <Button name="+" />
+
         </div>
         <div style={rowStyles}>
-          <button type="submit" style={{ width: btnWide, backgroundColor: color }}>
-            0
-          </button>
-          <button type="submit" style={btnStyles}>
-            .
-          </button>
-          <button type="submit" style={btnStyles}>
-            =
-          </button>
+          <Button name="0" wide />
+
+          <Button name="." />
+
+          <Button name="=" />
+
         </div>
 
       </div>
     );
   }
 }
-
-ButtonPanel.defaultProps = {
-  color: 'orange',
-  wide: true,
-};
-
-ButtonPanel.propTypes = {
-  color: PropTypes.string,
-  wide: PropTypes.bool,
-};
 
 export default ButtonPanel;
