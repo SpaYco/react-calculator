@@ -17,7 +17,7 @@ const operate = (numberOne, numberTwo, operation) => {
     result = bigOne.div(bigTwo).toString();
   }
   if (operation === '%') {
-    result = bigOne.div(bigTwo).toString();
+    result = bigOne.mod(bigTwo).toString();
   }
   return result;
 };
