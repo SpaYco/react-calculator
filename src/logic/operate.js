@@ -14,7 +14,7 @@ const operate = (numberOne, numberTwo, operation) => {
     result = bigOne.times(bigTwo).toString();
   }
   if (operation === '÷') {
-    if (numberOne === '0' || numberTwo === '0') {
+    if (numberTwo === '0') {
       result = 'No Devision By Zero';
     } else {
       result = bigOne.div(bigTwo).toString();
