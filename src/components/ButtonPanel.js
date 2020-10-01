@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const styles = {
@@ -15,54 +16,60 @@ const rowStyles = {
 // eslint-disable-next-line  react/prefer-stateless-function
 class ButtonPanel extends React.Component {
   render() {
+    const { clickHandler } = this.props;
+
+    this.handleClick = e => {
+      clickHandler(e);
+    };
+
     return (
       <div style={styles}>
         <div style={rowStyles}>
-          <Button name="AC" />
+          <Button name="AC" clickHandler={this.handleClick} />
 
-          <Button name="+/-" />
+          <Button name="+/-" clickHandler={this.handleClick} />
 
-          <Button name="%" />
+          <Button name="%" clickHandler={this.handleClick} />
 
-          <Button name="÷" />
-
-        </div>
-        <div style={rowStyles}>
-          <Button name="7" />
-
-          <Button name="8" />
-
-          <Button name="9" />
-
-          <Button name="X" />
+          <Button name="÷" clickHandler={this.handleClick} />
 
         </div>
         <div style={rowStyles}>
-          <Button name="4" />
+          <Button name="7" clickHandler={this.handleClick} />
 
-          <Button name="5" />
+          <Button name="8" clickHandler={this.handleClick} />
 
-          <Button name="6" />
+          <Button name="9" clickHandler={this.handleClick} />
 
-          <Button name="-" />
-
-        </div>
-        <div style={rowStyles}>
-          <Button name="1" />
-
-          <Button name="2" />
-
-          <Button name="3" />
-
-          <Button name="+" />
+          <Button name="X" clickHandler={this.handleClick} />
 
         </div>
         <div style={rowStyles}>
-          <Button name="0" wide />
+          <Button name="4" clickHandler={this.handleClick} />
 
-          <Button name="." />
+          <Button name="5" clickHandler={this.handleClick} />
 
-          <Button name="=" />
+          <Button name="6" clickHandler={this.handleClick} />
+
+          <Button name="-" clickHandler={this.handleClick} />
+
+        </div>
+        <div style={rowStyles}>
+          <Button name="1" clickHandler={this.handleClick} />
+
+          <Button name="2" clickHandler={this.handleClick} />
+
+          <Button name="3" clickHandler={this.handleClick} />
+
+          <Button name="+" clickHandler={this.handleClick} />
+
+        </div>
+        <div style={rowStyles}>
+          <Button name="0" wide clickHandler={this.handleClick} />
+
+          <Button name="." clickHandler={this.handleClick} />
+
+          <Button name="=" clickHandler={this.handleClick} />
 
         </div>
 
@@ -70,5 +77,12 @@ class ButtonPanel extends React.Component {
     );
   }
 }
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func,
+};
+ButtonPanel.defaultProps = {
+  clickHandler: () => '',
+};
 
 export default ButtonPanel;
