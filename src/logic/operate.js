@@ -21,11 +21,7 @@ const operate = (numberOne, numberTwo, operation) => {
     }
   }
   if (operation === '%') {
-    if (!Number.isNaN(bigTwo)) {
-      result = bigOne.div(bigTwo).toString();
-    } else {
-      result = bigOne.div(100).toString();
-    }
+    result = bigOne.div(100).toString();
   }
   return result;
 };
