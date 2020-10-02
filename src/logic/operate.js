@@ -14,10 +14,14 @@ const operate = (numberOne, numberTwo, operation) => {
     result = bigOne.times(bigTwo).toString();
   }
   if (operation === '÷') {
-    result = bigOne.div(bigTwo).toString();
+    if (numberTwo === '0') {
+      result = 'No Devision By Zero';
+    } else {
+      result = bigOne.div(bigTwo).toString();
+    }
   }
   if (operation === '%') {
-    result = bigOne.mod(bigTwo).toString();
+    result = bigOne.div(100).toString();
   }
   return result;
 };
