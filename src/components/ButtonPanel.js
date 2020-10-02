@@ -13,7 +13,6 @@ const rowStyles = {
   display: 'flex',
 };
 
-// eslint-disable-next-line  react/prefer-stateless-function
 class ButtonPanel extends React.Component {
   render() {
     const { clickHandler } = this.props;

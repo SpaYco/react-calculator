@@ -1,8 +1,6 @@
-/* eslint-disable react/button-has-type */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class Button extends React.Component {
   render() {
     const {
@@ -22,7 +20,7 @@ class Button extends React.Component {
     };
 
     return (
-      <button style={btnStyles} value={name} onClick={this.handleClick}>
+      <button type="button" style={btnStyles} value={name} onClick={this.handleClick}>
         {name}
       </button>
     );
