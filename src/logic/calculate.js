@@ -11,7 +11,7 @@ const calculate = (data, btn) => {
   let { next } = data;
   let { operation } = data;
 
-  if (totalIsNumber && nextlIsNumber) {
+  if (totalIsNumber && nextlIsNumber && total !== 'max length reached') {
     if (btn === '=') {
       total = operate(total, next, operation);
       next = null;
@@ -35,7 +35,7 @@ const calculate = (data, btn) => {
     }
   }
 
-  if (totalIsNumber && !nextlIsNumber) {
+  if (totalIsNumber && !nextlIsNumber && total !== 'max length reached') {
     if (btn === '=') {
       operation = '=';
     }
@@ -88,6 +88,11 @@ const calculate = (data, btn) => {
     total = null;
     next = null;
     operation = null;
+  }
+
+  if (total !== null && (total.length >= 33 || next >= 33)) {
+    total = 'max length reached';
+    next = 'max length reached';
   }
   return {
     total,
