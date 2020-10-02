@@ -1,7 +1,7 @@
 import operate from './operate';
 
 const calculate = (data, btn) => {
-  const arr = ['+', '-', 'X', '÷', '%'];
+  const arr = ['+', '-', 'X', '÷'];
 
   const totalIsNumber = !Number.isNaN(parseInt(data.total, 10));
   const nextlIsNumber = !Number.isNaN(parseInt(data.next, 10));
@@ -27,6 +27,12 @@ const calculate = (data, btn) => {
       next = null;
       operation = btn;
     }
+    if (btn === '%') {
+      const calc = operate(total, next, operation);
+      total = operate(calc, total * 2, btn);
+      next = null;
+      operation = '=';
+    }
   }
 
   if (totalIsNumber && !nextlIsNumber) {
@@ -39,6 +45,11 @@ const calculate = (data, btn) => {
     }
     if (arr.includes(btn)) {
       operation = btn;
+    }
+    if (btn === '%') {
+      total = operate(total, total * 2, btn);
+      next = null;
+      operation = '=';
     }
   }
 
