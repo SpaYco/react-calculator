@@ -14,15 +14,12 @@ const styles = {
   fontSize: 35,
 };
 
-// eslint-disable-next-line  react/prefer-stateless-function
-class Display extends React.Component {
-  render() {
-    return (
-      <div style={styles}>
-        {this.props.result}
-      </div>
-    );
-  }
+function Display(props) {
+  return (
+    <div style={styles}>
+      {props.result}
+    </div>
+  );
 }
 
 Display.defaultProps = {
